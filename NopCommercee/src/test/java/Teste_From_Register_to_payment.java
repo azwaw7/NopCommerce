@@ -2,7 +2,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import pages.Shoppingcart;
 
-public class justTest extends bastTest{
+public class Teste_From_Register_to_payment extends bastTest{
     @Test
     public void test() throws InterruptedException {
         naviagteToRe().getRegister()
@@ -16,7 +16,8 @@ public class justTest extends bastTest{
                 .getLeicaCamera()
                 .getShoppingCart()
                         .checkout()
-                                .getPayment();
+                                .getPayment()
+                                        .makePayment();
 
 
         Thread.sleep(5000);

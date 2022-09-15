@@ -1,13 +1,13 @@
 package pages;
 
 import Browser.Browser;
-import org.openqa.selenium.By;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import pages.Register_page;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.File;
 import java.util.List;
 
 public class HomePage {
@@ -17,7 +17,17 @@ public class HomePage {
     public Register_page getRegister(){
         driver.switchTo().frame(0);
         options.click();
+        final String path = "src/main/java/screenshot";
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destFile = new File(path + "test.png");
+        try {
+            FileUtils.copyFile(screenshot, destFile);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         return PageFactory.initElements(driver,Register_page.class);
+
 
     }
 

@@ -5,7 +5,7 @@ public class Info {
     public static String Url= "https://frontend.nopcommerce.com/";
     public static String firstName ="karim";
     public static String lastName ="samir";
-    public static String eMail ="zxcv@mail.com";
+    public static String eMail ="belmadi@mail.com";
     public static String password="admin123";
     public static String City ="new york city";
     public static String Address ="25 street ";
